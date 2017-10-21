@@ -224,7 +224,7 @@ void Sample::Update(DX::StepTimer const& timer)
             {
                 if (m_gamePadButtons.leftTrigger == GamePad::ButtonStateTracker::ButtonState::PRESSED)
                 {
-                    UpdateLobbyProperties();
+                    BrowseSearchHandles();
                 }
 
                 if (m_gamePadButtons.rightTrigger == GamePad::ButtonStateTracker::ButtonState::PRESSED)
@@ -234,7 +234,7 @@ void Sample::Update(DX::StepTimer const& timer)
 
                 if (m_gamePadButtons.leftShoulder == GamePad::ButtonStateTracker::ButtonState::PRESSED)
                 {
-                    UpdateGameProperties();
+                    PublishSearchHandle();
                 }
 
                 if (m_gamePadButtons.rightShoulder == GamePad::ButtonStateTracker::ButtonState::PRESSED)

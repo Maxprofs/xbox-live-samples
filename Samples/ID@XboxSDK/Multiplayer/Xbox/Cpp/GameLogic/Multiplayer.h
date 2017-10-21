@@ -15,7 +15,7 @@
 #define XPRIVILEGE_MULTIPLAYER_SESSIONS     254
 #define TITLE_ID                            0x169056CF
 #define GAME_SERVICE_CONFIG_ID              L"097d0100-e05c-4d37-8420-46f1169056cf"
-#define GAME_SESSION_TEMPLATE_NAME          L"GameSession"
+#define GAME_SESSION_TEMPLATE_NAME          L"GameSessionSearchable"
 #define LOBBY_TEMPLATE_NAME                 L"LobbySession"
 
 // Enable this for capturing performance counters
@@ -84,6 +84,8 @@ private:
     std::vector<xbox::services::multiplayer::manager::multiplayer_event> m_multiplayerEventQueue;
     std::shared_ptr<xbox::services::multiplayer::manager::multiplayer_manager> m_multiplayerManager;
     Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs^ m_protocolActivatedEventArgs;
+    std::vector<xbox::services::multiplayer::multiplayer_search_handle_details> m_searchHandles{};
+
 
     // Multiplayer Manager Methods
     void InitializeMultiplayerManager(_In_ const string_t& templateName = LOBBY_TEMPLATE_NAME);
@@ -161,4 +163,7 @@ private:
         xbox::services::multiplayer::manager::multiplayer_session_type sessionType,
         std::shared_ptr<SessionView> sessionView
     );
+    void PublishSearchHandle();
+    void BrowseSearchHandles();
+    void SetRoleInfo();
 };

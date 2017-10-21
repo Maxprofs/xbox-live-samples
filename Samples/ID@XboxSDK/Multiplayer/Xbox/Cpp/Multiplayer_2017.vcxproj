@@ -183,6 +183,7 @@
     <ClInclude Include="Utils\SessionListView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SearchHandleIntegration.cpp" />
     <ClCompile Include="..\..\..\..\Kits\ATGTK\SampleGUI.cpp" />
     <ClCompile Include="..\..\..\..\Kits\ATGTK\TextConsole.cpp" />
     <ClCompile Include="GameLogic\Multiplayer.cpp" />
